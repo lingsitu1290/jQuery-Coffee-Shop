@@ -16,7 +16,7 @@
         <h1>Coffee Shop</h1>
         <br>
 
-        <img id="coffee_image" src="LOLWUT" alt="make this image work" height="300" width="200">
+        <img id="coffee_image" src="" alt="make this image work" height="300" width="200">
 
         <h3 id="message">Click The Image To Order Coffee</h3>
 
@@ -43,22 +43,19 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery.js"> </script> 
 <script>
 
-    var myImage = document.getElementById("coffee_image");
-    var myRevenueMessage = document.getElementById("revenue");
+    "use strict";
 
-    myImage.setAttribute('src', "static/coffee_beans.jpg");
+    $('#coffee_image').attr('src','static/coffee_beans.jpg');
 
-    myImage.addEventListener('click', function () {
-        return makeCoffee();
+    $('#coffee_image').click(function() {
+        setTimeout(function() { $('#coffee_image').attr('src',"static/coffee_machine.jpg"); }, 500);
+        setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_mug.jpg"); }, 1500);
+        setTimeout(function() { $('#coffee_image').attr('src', "static/coffee_beans.jpg"); }, 4000);
     });
 
-    function makeCoffee() {
-         myImage.src = "static/coffee_machine.jpg";
-         setTimeout(function() { myImage.setAttribute('src', "static/coffee_mug.jpg"); }, 500);
-         setTimeout(function() { myImage.setAttribute('src', "static/coffee_beans.jpg"); }, 1500);
-    }
 
 </script>
 
